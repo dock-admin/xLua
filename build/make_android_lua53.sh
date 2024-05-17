@@ -1,6 +1,4 @@
 
-ANDROID_NDK=/Users/gygame/Desktop/xlua/android-ndk-r21b
-
 if [ -n "$ANDROID_NDK" ]; then
     export NDK=${ANDROID_NDK}
 elif [ -n "$ANDROID_NDK_HOME" ]; then
