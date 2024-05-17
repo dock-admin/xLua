@@ -1,5 +1,5 @@
 
-set "__VS=Visual Studio 16 2019"
+set "__VS=Visual Studio 17 2022"
 set "__VSWhere=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 set "__VSDISPLAY="
 set "__VSVER="
@@ -19,7 +19,7 @@ if "%__VSVER%" neq "" (
 
 mkdir build32 & pushd build32
 cmake -DLUAC_COMPATIBLE_FORMAT=ON -G  "%__VS%" -A Win32 ..
-IF %ERRORLEVEL% NEQ 0 cmake -DLUAC_COMPATIBLE_FORMAT=ON -G "Visual Studio 16 2019" -A Win32 ..
+IF %ERRORLEVEL% NEQ 0 cmake -DLUAC_COMPATIBLE_FORMAT=ON -G "Visual Studio 17 2022" -A Win32 ..
 popd
 cmake --build build32 --config Release
 pause
