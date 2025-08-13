@@ -1,3 +1,12 @@
+## 添加的功能
+
+* json/protobuf 工具
+* 修改action 使其能正常编译
+
+更详细的特性、平台支持介绍请参考 [xLua 文档: 功能特性](Assets/XLua/Doc/features.md)。
+
+<br/>
+
 ![](Assets/XLua/Doc/xLua.png)
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Tencent/xLua/blob/master/LICENSE.TXT)
