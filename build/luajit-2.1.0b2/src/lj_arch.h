@@ -341,10 +341,10 @@
 #endif
 
 #ifndef LJ_PAGESIZE
-#ifdef __ANDROID__
-#define LJ_PAGESIZE		16384
+#if defined(__ANDROID__)
+#define LJ_PAGESIZE 16384
 #else
-#define LJ_PAGESIZE		4096
+#define LJ_PAGESIZE 4096
 #endif
 #endif
 
