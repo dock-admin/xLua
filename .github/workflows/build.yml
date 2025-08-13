@@ -24,12 +24,12 @@ jobs:
           ./make_android_lua54.sh
           ./make_android_lua53.sh
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua54/**/*
           name: plugin_lua54
       - name: Upload53
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua53/**/*
           name: plugin_lua53 
@@ -51,10 +51,39 @@ jobs:
           sudo apt install gcc-multilib libncurses5 -y
           ./make_android_luajit_arm64.sh  
       - name: UploadJit
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit
+  
+  ohos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install NDK
+        run: |
+          cd ~
+          cd ~
+          curl -O https://repo.huaweicloud.com/harmonyos/os/4.1-Release/ohos-sdk-windows_linux-public.tar.gz
+          tar xvfz ohos-sdk-windows_linux-public.tar.gz
+          cd ohos-sdk/linux
+          unzip -o -d ./ native-linux-x64-4.1.7.5-Release.zip
+      - name: Build
+        run: |
+          cd build
+          chmod +x make_ohos_lua5*.sh
+          OHOS_NDK_HOME=~/ohos-sdk/linux/native ./make_ohos_lua54.sh
+          OHOS_NDK_HOME=~/ohos-sdk/linux/native ./make_ohos_lua53.sh
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./build/plugin_lua54/**/*
+          name: plugin_lua54
+      - name: Upload53
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./build/plugin_lua53/**/*
+          name: plugin_lua53
 
   linux:
     runs-on: ubuntu-latest
@@ -67,17 +96,17 @@ jobs:
           ./make_linux64_lua53.sh
           ./make_linux64_luajit.sh
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua54/**/*
           name: plugin_lua54
       - name: Upload53
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua53/**/*
           name: plugin_lua53   
       - name: UploadJit
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit  
@@ -93,22 +122,22 @@ jobs:
           ./make_ios_lua53.sh
           ./make_ios_luajit.sh
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua54/**/*
           name: plugin_lua54
       - name: Upload53
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua53/**/*
           name: plugin_lua53   
       - name: UploadJit
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit
   osx:
-    runs-on: macos-11
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -121,17 +150,17 @@ jobs:
           ./make_osx_silicon_lua53.sh
           ./make_osx_silicon_lua54.sh
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua54/**/*
           name: plugin_lua54
       - name: Upload53
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua53/**/*
           name: plugin_lua53   
       - name: UploadJit
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit  
@@ -158,17 +187,17 @@ jobs:
           cd build
           .\make_win64_luajit.bat
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua54/**/*
           name: plugin_lua54
       - name: Upload53
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_lua53/**/*
           name: plugin_lua53   
       - name: UploadJit
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit
@@ -190,7 +219,7 @@ jobs:
           cd build
           .\make_win32_luajit.bat  
       - name: UploadJit
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit
