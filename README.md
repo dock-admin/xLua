@@ -1,6 +1,7 @@
 ## 添加的功能
 
 * json/protobuf 工具
+* 支持安卓16KB模式
 * 修改action 使其能正常编译
 
 更详细的特性、平台支持介绍请参考 [xLua 文档: 功能特性](Assets/XLua/Doc/features.md)。
