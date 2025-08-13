@@ -10,7 +10,7 @@ jobs:
   android:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install NDK
         run: |
           cd ~
@@ -37,7 +37,7 @@ jobs:
   android_luajit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install NDK
         run: |
           cd ~
@@ -59,7 +59,7 @@ jobs:
   ohos:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install NDK
         run: |
           cd ~
@@ -88,7 +88,7 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build
         run: |
           cd build
@@ -114,7 +114,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build
         run: |
           cd build
@@ -140,7 +140,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build
         run: |
           cd build
@@ -165,10 +165,10 @@ jobs:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit  
   windows:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
       - name: Insatll MSVC
         uses: microsoft/setup-msbuild@v1.0.2
@@ -206,7 +206,7 @@ jobs:
     runs-on: windows-2019
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
       - name: Insatll MSVC
         uses: microsoft/setup-msbuild@v1.0.2
