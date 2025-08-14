@@ -6,7 +6,7 @@ elif [ -n "$ANDROID_NDK_HOME" ]; then
 elif [ -n "$ANDROID_NDK_HOME" ]; then
     export NDK=${ANDROID_NDK_HOME}
 else
-    export NDK=~/android-ndk-r15c
+    export NDK=~/android-ndk-r28c
 fi
 
 if [ ! -d "$NDK" ]; then
