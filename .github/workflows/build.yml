@@ -17,7 +17,6 @@ jobs:
           wget -O NDK -q https://dl.google.com/android/repository/android-ndk-r28c-linux.zip
           unzip -q NDK
           ANDROID_NDK_HOME=$(pwd)/android-ndk-r28c
-
       - name: Build
         run: |
           cd build
