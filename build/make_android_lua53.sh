@@ -1,7 +1,4 @@
-
-if [ -n "$ANDROID_NDK" ]; then
-    export NDK=${ANDROID_NDK}
-elif [ -n "$ANDROID_NDK_HOME" ]; then
+if [ -n "$ANDROID_NDK_HOME" ]; then
     export NDK=${ANDROID_NDK_HOME}
 elif [ -n "$ANDROID_NDK_HOME" ]; then
     export NDK=${ANDROID_NDK_HOME}
