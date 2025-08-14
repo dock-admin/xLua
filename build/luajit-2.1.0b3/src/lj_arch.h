@@ -609,7 +609,7 @@
 #endif
 
 #ifndef LJ_PAGESIZE
-#define LJ_PAGESIZE 16384
+#define LJ_PAGESIZE			4096
 #endif
 
 /* Various workarounds for embedded operating systems or weak C runtimes. */

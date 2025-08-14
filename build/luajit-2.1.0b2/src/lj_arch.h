@@ -341,7 +341,7 @@
 #endif
 
 #ifndef LJ_PAGESIZE
-#define LJ_PAGESIZE 16384
+#define LJ_PAGESIZE			4096
 #endif
 
 /* Check for minimum required compiler versions. */
