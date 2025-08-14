@@ -609,11 +609,7 @@
 #endif
 
 #ifndef LJ_PAGESIZE
-#if defined(__ANDROID__)
 #define LJ_PAGESIZE 16384
-#else
-#define LJ_PAGESIZE 4096
-#endif
 #endif
 
 /* Various workarounds for embedded operating systems or weak C runtimes. */
