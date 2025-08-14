@@ -1,8 +1,39 @@
 ## 添加的功能
 
 * json/protobuf 工具
-* 支持安卓16KB模式
-* 修改action 使其能正常编译
+* 支持安卓16KB模式 (主要修改)
+
+>主要修改lj_arch.h
+
+```csharp
+// 旧代码
+#ifndef LJ_PAGESIZE
+#define LJ_PAGESIZE		4096
+#endif
+
+// 修改为
+#ifndef LJ_PAGESIZE
+#ifdef __ANDROID__
+#define LJ_PAGESIZE		16384
+#else
+#define LJ_PAGESIZE		4096
+#endif
+#endif
+```
+
+# 旧
+build android-16 armeabi-v7a arm-linux-androideabi-4.9
+build android-16 arm64-v8a  arm-linux-androideabi-clang
+build android-16 x86 x86-4.9
+
+# 新
+build android-35 armeabi-v7a arm-linux-androideabi-4.9
+build android-35 arm64-v8a  arm-linux-androideabi-clang
+build android-35 x86 x86-4.9
+
+>指定ndk版本28
+
+* 修改action 使其能正常编译(upload-artifact@v4 移除过时的android_luajit)
 
 更详细的特性、平台支持介绍请参考 [xLua 文档: 功能特性](Assets/XLua/Doc/features.md)。
 
