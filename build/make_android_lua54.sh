@@ -7,7 +7,7 @@ elif [ -n "$ANDROID_NDK_HOME" ]; then
 else
     export NDK=~/android-ndk-r28c
 fi
-
+echo "$NDK"
 if [ ! -d "$NDK" ]; then
     echo "Please set ANDROID_NDK environment to the root of NDK."
     exit 1
